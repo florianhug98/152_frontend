@@ -10,9 +10,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-20.04
-    strategy:
-      matrix:
-        node-version: [12.x]
 
     steps:
       - name: Get Times
@@ -21,29 +18,29 @@ jobs:
           timeZone: 2
           format: 'YYYY-MM-DD-HH-mm-ss'
         uses: nanzm/get-time-action@v1.1
-        
+
       - name: Checkout Rep
         uses: actions/checkout@v2
-            
+
       - name: Node ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
-          
+          node-version: 16.6.2
+
       - name: Install dependencies
-        run: npm install 
-        
+        run: npm install
+
       - name: Prettier
         run: npm run prettier
-        
+
       - name: build
         run: |
           npm prune
           npm run build --configuration=production
-          
+
       - name: Run Test
         run: npm run test
-          
+
       - name: Push Build to Releases
         uses: ncipollo/release-action@v1
         with:
