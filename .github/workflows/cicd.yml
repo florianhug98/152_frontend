@@ -31,7 +31,7 @@ jobs:
         run: npm install
 
       - name: Prettier
-        run: npx prettier --check .
+        run: npm run prettier
 
       - name: build
         run: |
@@ -39,7 +39,7 @@ jobs:
           npm run build --configuration=production
 
       - name: Run Test
-        run: npm run test
+        run: npm run test-no-watch
 
       - name: Push Build to Releases
         uses: ncipollo/release-action@v1
