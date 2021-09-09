@@ -31,7 +31,7 @@ jobs:
         run: npm install
 
       - name: Prettier
-        run: npm run prettier
+        run: npx prettier --check .
 
       - name: build
         run: |

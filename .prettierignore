@@ -1,0 +1,25 @@
+# folders
+/.github
+/.idea
+/dist
+/e2e
+/node_modules
+
+# files
+.editorconfig
+.gitignore
+.prettierignore
+angular.json
+browserlist
+karma.conf.js
+package.json
+package-lock.json
+README.md
+tsconfig.app.json
+tsconfig.json
+tsconfig.spec.json
+tslint.json
+
+#patterns
+*.ico
+*.svg
