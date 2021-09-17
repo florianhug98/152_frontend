@@ -1,3 +1,11 @@
 <label for="name">SummonerName: </label>
 <input id="name" type="text" [formControl]="summonerName">
 <button (click)="search()">Search</button>
+
+<ng-container *ngIf="summoner; else errorMessage">
+  <app-player-detail [summoner]="summoner"></app-player-detail>
+</ng-container>
+
+<ng-template #errorMessage>
+  <p>{{error}}</p>
+</ng-template>

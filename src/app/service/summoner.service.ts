@@ -1,16 +1,26 @@
 import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
+import {
+  HttpClient,
+  HttpParams,
+  HttpParamsOptions,
+} from "@angular/common/http";
 import { Summoner } from "../dto/summoner";
+import { BACKEND_BASE_URL, BACKEND_SUMMONER_URL } from "../util/constants";
 
 @Injectable({
   providedIn: "root",
 })
 export class SummonerService {
-  url = "http://localhost:9900/stats/summoner/";
   constructor(private http: HttpClient) {}
 
-  getSummonerByName(summonerName: String): Observable<Summoner> {
-    return this.http.get<Summoner>(this.url + summonerName);
+  getSummonerByName(summonerName: String): Promise<Summoner> {
+    const params: HttpParamsOptions = {
+      fromString: "summonerName=" + summonerName,
+    };
+    return this.http
+      .get<Summoner>(BACKEND_BASE_URL + BACKEND_SUMMONER_URL, {
+        params: new HttpParams(params),
+      })
+      .toPromise();
   }
 }

@@ -9,6 +9,7 @@ import { SearchComponent } from "./components/content/search/search.component";
 import { NotFoundComponent } from "./components/error/not-found/not-found.component";
 import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
+import { PlayerDetailComponent } from "./components/content/player-detail/player-detail.component";
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { HttpClientModule } from "@angular/common/http";
     FooterComponent,
     SearchComponent,
     NotFoundComponent,
+    PlayerDetailComponent,
   ],
   imports: [
     BrowserModule,
