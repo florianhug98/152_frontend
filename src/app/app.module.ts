@@ -10,6 +10,11 @@ import { NotFoundComponent } from "./components/error/not-found/not-found.compon
 import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { PlayerDetailComponent } from "./components/content/player-detail/player-detail.component";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatInputModule } from "@angular/material/input";
+import { MatIconModule } from "@angular/material/icon";
+import { MatButtonModule } from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -25,6 +30,11 @@ import { PlayerDetailComponent } from "./components/content/player-detail/player
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

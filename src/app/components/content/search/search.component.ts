@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { FormControl } from "@angular/forms";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { SummonerService } from "../../../service/summoner.service";
 import { Summoner } from "../../../dto/summoner";
 
@@ -9,17 +9,27 @@ import { Summoner } from "../../../dto/summoner";
   styleUrls: ["./search.component.scss"],
 })
 export class SearchComponent implements OnInit {
-  summonerName = new FormControl("");
+  summonerForm = new FormGroup({
+    summonerName: new FormControl("", [Validators.required]),
+  });
+
   summoner?: Summoner;
   error = "";
   firstSearch = false;
+
   constructor(private summonerService: SummonerService) {}
 
   ngOnInit(): void {}
 
+  handleEnter(): void {
+    if (this.summonerForm.valid) {
+      this.search();
+    }
+  }
+
   search(): void {
     this.summonerService
-      .getSummonerByName(this.summonerName.value)
+      .getSummonerByName(this.summonerForm.get("summonerName")?.value)
       .then((summoner) => {
         if (summoner !== null) {
           this.error = "";
