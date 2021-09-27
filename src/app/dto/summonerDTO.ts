@@ -1,4 +1,4 @@
-export interface Summoner {
+export interface SummonerDTO {
   accountId: string;
   profileIconId: number;
   revisionDate: number;

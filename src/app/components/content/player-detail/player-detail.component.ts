@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from "@angular/core";
-import { Summoner } from "../../../dto/summoner";
+import { SummonerDTO } from "../../../dto/summonerDTO";
 import { Constants } from "../../../util/constants";
+import { LeagueEntryDTO } from "../../../dto/leagueEntryDTO";
 
 @Component({
   selector: "app-player-detail",
@@ -8,7 +9,8 @@ import { Constants } from "../../../util/constants";
   styleUrls: ["./player-detail.component.scss"],
 })
 export class PlayerDetailComponent implements OnInit {
-  @Input() summoner: Summoner;
+  @Input() summoner: SummonerDTO;
+  @Input() league: LeagueEntryDTO[];
 
   constructor() {}
 

@@ -15,6 +15,7 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { MatIconModule } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
+import { RankComponent } from './components/content/rank/rank.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { MatButtonModule } from "@angular/material/button";
     SearchComponent,
     NotFoundComponent,
     PlayerDetailComponent,
+    RankComponent,
   ],
   imports: [
     BrowserModule,

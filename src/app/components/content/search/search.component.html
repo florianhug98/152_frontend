@@ -2,7 +2,7 @@
   <div class="form-field">
     <mat-form-field appearance="outline">
       <mat-label>Summoner Name</mat-label>
-      <input  matInput type="text" (keyup.enter)="handleEnter()" formControlName="summonerName">
+      <input matInput type="text" (keyup.enter)="handleEnter()" formControlName="summonerName">
       <button mat-button matSuffix mat-stroked-button (click)="search()" [disabled]="!summonerForm.valid">
         <mat-icon>search</mat-icon>
       </button>
@@ -11,8 +11,8 @@
 </form>
 
 
-<ng-container *ngIf="summoner; else errorMessage">
-  <app-player-detail [summoner]="summoner"></app-player-detail>
+<ng-container *ngIf="dataLoaded | async; else errorMessage">
+  <app-player-detail [summoner]="summoner!" [league]="league!"></app-player-detail>
 </ng-container>
 
 <ng-template #errorMessage>
