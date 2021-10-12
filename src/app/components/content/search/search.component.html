@@ -1,14 +1,16 @@
-<form [formGroup]="summonerForm">
-  <div class="form-field">
-    <mat-form-field appearance="outline">
-      <mat-label>Summoner Name</mat-label>
-      <input matInput type="text" (keyup.enter)="handleEnter()" formControlName="summonerName">
-      <button mat-button matSuffix mat-stroked-button (click)="search()" [disabled]="!summonerForm.valid">
-        <mat-icon>search</mat-icon>
-      </button>
-    </mat-form-field>
-  </div>
-</form>
+<div class="form-wrapper">
+  <form [formGroup]="summonerForm">
+    <div class="form-field">
+      <mat-form-field appearance="outline">
+        <mat-label>Summoner Name</mat-label>
+        <input matInput type="text" (keyup.enter)="handleEnter()" formControlName="summonerName">
+        <button mat-button matSuffix mat-stroked-button (click)="search()" [disabled]="!summonerForm.valid">
+          <mat-icon>search</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+  </form>
+</div>
 
 
 <ng-container *ngIf="dataLoaded | async; else errorMessage">

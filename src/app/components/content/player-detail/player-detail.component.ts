@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { SummonerDTO } from "../../../dto/summonerDTO";
-import { Constants } from "../../../util/constants";
 import { LeagueEntryDTO } from "../../../dto/leagueEntryDTO";
 
 @Component({
@@ -15,15 +14,4 @@ export class PlayerDetailComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-
-  getProfileIconUrl(): string {
-    return (
-      Constants.CDN_BASE_URL +
-      Constants.CDN_VERSION +
-      Constants.CDN_PROFILE_ICON_URL +
-      "/" +
-      this.summoner.profileIconId +
-      ".png"
-    );
-  }
 }

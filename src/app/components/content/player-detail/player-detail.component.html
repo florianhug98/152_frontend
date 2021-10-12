@@ -1,6 +1,2 @@
-<br/>
-<img src="{{getProfileIconUrl()}}" alt="icon">
-<p>Summoner Name : {{summoner.name}}</p>
-<p>Summoner Level: {{summoner.summonerLevel}}</p>
-<br/>
-<app-rank [summoner]="summoner" [league]="league"></app-rank>
+<app-player-info [summoner]="summoner"></app-player-info>
+<app-rank-info [leagueEntries]="league"></app-rank-info>

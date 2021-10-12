@@ -1,6 +1,16 @@
-.form-field {
+.form-wrapper {
   display: flex;
-  mat-form-field {
-    margin-right: 10px;
+  min-width: 10em;
+  form {
+    width: 100%;
+    .form-field {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      mat-form-field {
+        width: 100%;
+      }
+    }
   }
 }

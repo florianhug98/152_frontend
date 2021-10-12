@@ -1,0 +1,16 @@
+.rank-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .rank-card {
+    color: darkgrey;
+    flex-grow: 1;
+    .league {
+      font-size: 0.9em;
+    }
+    .rank {
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+  }
+}

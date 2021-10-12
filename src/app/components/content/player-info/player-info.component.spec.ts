@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RankComponent } from './rank.component';
+import { PlayerInfoComponent } from './player-info.component';
 
-describe('RankComponent', () => {
-  let component: RankComponent;
-  let fixture: ComponentFixture<RankComponent>;
+describe('PlayerInfoComponent', () => {
+  let component: PlayerInfoComponent;
+  let fixture: ComponentFixture<PlayerInfoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RankComponent ]
+      declarations: [ PlayerInfoComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RankComponent);
+    fixture = TestBed.createComponent(PlayerInfoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

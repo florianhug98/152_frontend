@@ -6,4 +6,10 @@ export class Constants {
   static readonly CDN_BASE_URL = "http://ddragon.leagueoflegends.com/cdn";
   static readonly CDN_VERSION = "/11.19.1";
   static readonly CDN_PROFILE_ICON_URL = "/img/profileicon";
+
+  static readonly ICON_DEFAULT_URL =
+    "https://opgg-static.akamaized.net/images/medals/default.png";
+
+  static readonly SOLO_QUEUE = "RANKED_SOLO_5x5";
+  static readonly FLEX_QUEUE = "RANKED_FLEX_5x5";
 }
