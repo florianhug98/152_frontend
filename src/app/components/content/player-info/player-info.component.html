@@ -1,6 +1,9 @@
-<div class="player-info-content">
-  <br/>
-  <img class="icon" src="{{getProfileIconUrl()}}" alt="player icon"/>
-  <p>Summoner Name : {{summoner.name}}</p>
-  <p>Summoner Level: {{summoner.summonerLevel}}</p>
-</div>
+<mat-card class="mat-elevation-z1">
+  <mat-card-title-group>
+    <mat-card-title>{{summoner.name}}</mat-card-title>
+    <img mat-card-sm-image src="{{getProfileIconUrl()}}" alt="profile icon">
+  </mat-card-title-group>
+  <mat-card-content>
+    <span>Level: {{summoner.summonerLevel}}</span>
+  </mat-card-content>
+</mat-card>
