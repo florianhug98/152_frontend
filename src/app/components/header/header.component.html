@@ -1,13 +1,14 @@
-<mat-toolbar color="primary">
-  <span>Modul 152</span>
-  <span class="spacer"></span>
-  <button mat-flat-button routerLink="/search">
-    Summoner
+<mat-toolbar fxLayout="row" color="primary">
+  <span fxFlex>Modul 152</span>
+  <button routerLink="/search" mat-button fxHide.xs>Summoner</button>
+  <button routerLink="/items" mat-button fxHide.xs>Items</button>
+  <button routerLink="/chapmions" mat-button fxHide.xs>Champions</button>
+  <button mat-icon-button [matMenuTriggerFor]="dropMenu" fxHide fxShow.xs>
+    <mat-icon>more_vert</mat-icon>
   </button>
-  <button mat-flat-button routerLink="/items">
-    Items
-  </button>
-  <button mat-flat-button routerLink="champions">
-    Champions
-  </button>
+  <mat-menu #dropMenu="matMenu">
+    <button routerLink="/search" mat-menu-item>Summoner</button>
+    <button routerLink="/items" mat-menu-item>Items</button>
+    <button routerLink="/champions" mat-menu-item>Champions</button>
+  </mat-menu>
 </mat-toolbar>
