@@ -26,6 +26,7 @@ import { MatListModule } from "@angular/material/list";
 import { LayoutModule } from "@angular/cdk/layout";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { MatMenuModule } from "@angular/material/menu";
+import { PlayerStatsComponent } from './components/content/player-stats/player-stats.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { MatMenuModule } from "@angular/material/menu";
     RankInfoComponent,
     ItemComponent,
     ChampionsComponent,
+    PlayerStatsComponent,
   ],
   imports: [
     BrowserModule,
