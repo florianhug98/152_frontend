@@ -18,6 +18,9 @@ import { MatButtonModule } from "@angular/material/button";
 import { PlayerInfoComponent } from "./components/content/player-info/player-info.component";
 import { MatCardModule } from "@angular/material/card";
 import { RankInfoComponent } from "./components/content/rank-info/rank-info.component";
+import { MatToolbarModule } from "@angular/material/toolbar";
+import { ItemComponent } from './components/content/item/item.component';
+import { ChampionsComponent } from './components/content/champions/champions.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +32,8 @@ import { RankInfoComponent } from "./components/content/rank-info/rank-info.comp
     PlayerDetailComponent,
     PlayerInfoComponent,
     RankInfoComponent,
+    ItemComponent,
+    ChampionsComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +46,7 @@ import { RankInfoComponent } from "./components/content/rank-info/rank-info.comp
     MatIconModule,
     MatButtonModule,
     MatCardModule,
+    MatToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
