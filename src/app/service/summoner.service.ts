@@ -8,6 +8,7 @@ import { SummonerDTO } from "../dto/summonerDTO";
 import { Constants } from "../util/constants";
 import { ResponseDTO } from "../dto/responseDTO";
 import { LeagueEntryDTO } from "../dto/leagueEntryDTO";
+import {MatchDTO} from "../dto/matchDTO";
 
 @Injectable({
   providedIn: "root",
@@ -43,5 +44,19 @@ export class SummonerService {
         }
       )
       .toPromise();
+  }
+
+  getGamesByPuuid(uuid: string): Promise<ResponseDTO<MatchDTO[]>>{
+    const params: HttpParamsOptions = {
+      fromString: "puuid=" + uuid + "&limit=5"
+    };
+    return this.http
+        .get<ResponseDTO<MatchDTO[]>>(
+            Constants.BACKEND_BASE_URL + Constants.BACKEND_MATCH_URL,
+            {
+              params: new HttpParams(params)
+            }
+        )
+        .toPromise();
   }
 }

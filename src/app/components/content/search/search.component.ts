@@ -4,6 +4,7 @@ import { SummonerService } from "../../../service/summoner.service";
 import { SummonerDTO } from "../../../dto/summonerDTO";
 import { LeagueEntryDTO } from "../../../dto/leagueEntryDTO";
 import {ErrorMessageDTO} from "../../../dto/errorMessageDTO";
+import {MatchDTO} from "../../../dto/matchDTO";
 
 @Component({
   selector: "app-search",
@@ -16,6 +17,7 @@ export class SearchComponent implements OnInit {
   });
   summoner?: SummonerDTO;
   league?: LeagueEntryDTO[];
+  matches?: MatchDTO[];
   dataLoaded: Promise<boolean>;
   errorMessage = "";
   firstSearch = false;
@@ -43,7 +45,11 @@ export class SearchComponent implements OnInit {
           this.dataLoaded = Promise.resolve(false);
         }
       })
-      .finally(() => (this.firstSearch = true));
+        .catch(error => {
+            this.errorMessage = error.statusText;
+            this.dataLoaded = Promise.resolve(false);
+        })
+        .finally(() => (this.firstSearch = true));
   }
 
   private getSummonerInfo() {
@@ -52,10 +58,28 @@ export class SearchComponent implements OnInit {
       .then((response) => {
         if (!response.errorMessage) {
           this.league = response.data;
-          this.dataLoaded = Promise.resolve(true);
         } else {
           this.errorMessage = response.errorMessage.errorMessage;
         }
       })
+        .catch(error => {
+            this.errorMessage = error.statusText;
+            this.dataLoaded = Promise.resolve(false);
+        })
+
+    this.summonerService
+        .getGamesByPuuid(this.summoner?.puuid as string)
+        .then(response => {
+          if (!response.errorMessage){
+            this.matches = response.data;
+            this.dataLoaded = Promise.resolve(true);
+          }else {
+            this.errorMessage = response.errorMessage.errorMessage;
+          }
+        })
+        .catch(error => {
+            this.errorMessage = error.statusText;
+            this.dataLoaded = Promise.resolve(false);
+        })
   }
 }

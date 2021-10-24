@@ -7,6 +7,8 @@
   .rank-card {
     color: darkgrey;
     flex-grow: 1;
+    flex-basis: 0;
+    white-space: pre-line;
     .league {
       font-size: 0.9em;
     }
