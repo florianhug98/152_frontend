@@ -1,16 +1,24 @@
 <div class="rank-info">
   <mat-card class="rank-card mat-elevation-z1">
-    <img mat-card-sm-image src="{{getIconPath(solo)}}" alt="{{getRank(solo)}} Icon">
+    <img
+      mat-card-sm-image
+      src="{{ getIconPath(solo) }}"
+      alt="{{ getRank(solo) }} Icon"
+    />
     <mat-card-content>
       <div class="league">Solo Rank</div>
-      <div class="rank">{{getRank(solo)}}</div>
+      <div class="rank">{{ getRank(solo) }}</div>
     </mat-card-content>
   </mat-card>
   <mat-card class="rank-card mat-elevation-z1">
-    <img mat-card-sm-image src="{{getIconPath(flex)}}" alt="{{getRank(flex)}} Icon">
+    <img
+      mat-card-sm-image
+      src="{{ getIconPath(flex) }}"
+      alt="{{ getRank(flex) }} Icon"
+    />
     <mat-card-content>
       <div class="league">Flex Rank</div>
-      <div class="rank">{{getRank(flex)}}</div>
+      <div class="rank">{{ getRank(flex) }}</div>
     </mat-card-content>
   </mat-card>
 </div>

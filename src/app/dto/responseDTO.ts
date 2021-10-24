@@ -1,4 +1,4 @@
-import {ErrorMessageDTO} from "./errorMessageDTO";
+import { ErrorMessageDTO } from "./errorMessageDTO";
 
 export interface ResponseDTO<Type> {
   data: Type;

@@ -27,7 +27,14 @@ export class RankInfoComponent implements OnInit {
       const leagueEntry = this.leagueEntries.filter(
         (entry) => entry.queueType === queueType
       )[0];
-      return leagueEntry.tier + " " + leagueEntry.rank + " \n(" + leagueEntry.leaguePoints + " LP)";
+      return (
+        leagueEntry.tier +
+        " " +
+        leagueEntry.rank +
+        " \n(" +
+        leagueEntry.leaguePoints +
+        " LP)"
+      );
     }
     return "UNRANKED";
   }

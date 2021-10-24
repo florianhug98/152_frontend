@@ -1,4 +1,4 @@
-export class ErrorMessageDTO{
-    httpCode: number;
-    errorMessage: string;
+export class ErrorMessageDTO {
+  httpCode: number;
+  errorMessage: string;
 }

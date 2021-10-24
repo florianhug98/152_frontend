@@ -1,16 +1,15 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { PlayerInfoComponent } from './player-info.component';
+import { PlayerInfoComponent } from "./player-info.component";
 
-describe('PlayerInfoComponent', () => {
+describe("PlayerInfoComponent", () => {
   let component: PlayerInfoComponent;
   let fixture: ComponentFixture<PlayerInfoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PlayerInfoComponent ]
-    })
-    .compileComponents();
+      declarations: [PlayerInfoComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('PlayerInfoComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

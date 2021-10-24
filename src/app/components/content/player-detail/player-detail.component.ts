@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { SummonerDTO } from "../../../dto/summonerDTO";
 import { LeagueEntryDTO } from "../../../dto/leagueEntryDTO";
-import {MatchDTO} from "../../../dto/matchDTO";
+import { MatchDTO } from "../../../dto/matchDTO";
 
 @Component({
   selector: "app-player-detail",
