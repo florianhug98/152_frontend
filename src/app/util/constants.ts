@@ -12,4 +12,9 @@ export class Constants {
 
   static readonly SOLO_QUEUE = "RANKED_SOLO_5x5";
   static readonly FLEX_QUEUE = "RANKED_FLEX_5x5";
+
+  static readonly HTTP_OK = 200;
+  static readonly HTTP_NOT_FOUND = 404;
+  static readonly HTTP_SERVER_ERROR = 500;
+  static readonly HTTP_TOO_MANY_REQUESTS = 429;
 }

@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { SummonerService } from "../../../service/summoner.service";
 import { SummonerDTO } from "../../../dto/summonerDTO";
 import { LeagueEntryDTO } from "../../../dto/leagueEntryDTO";
+import {ErrorMessageDTO} from "../../../dto/errorMessageDTO";
 
 @Component({
   selector: "app-search",
@@ -16,7 +17,7 @@ export class SearchComponent implements OnInit {
   summoner?: SummonerDTO;
   league?: LeagueEntryDTO[];
   dataLoaded: Promise<boolean>;
-  error = "";
+  errorMessage = "";
   firstSearch = false;
 
   constructor(private summonerService: SummonerService) {}
@@ -33,17 +34,15 @@ export class SearchComponent implements OnInit {
     this.summonerService
       .getSummonerByName(this.summonerForm.get("summonerName")?.value)
       .then((response) => {
-        if (response.error === "") {
-          this.error = "";
+        if (!response.errorMessage) {
+          this.errorMessage = "";
           this.summoner = response.data;
           this.getSummonerInfo();
         } else {
-          this.error = response.error;
-          this.summoner = undefined;
+          this.errorMessage = response.errorMessage.errorMessage
           this.dataLoaded = Promise.resolve(false);
         }
       })
-      .catch((error) => (this.error = error))
       .finally(() => (this.firstSearch = true));
   }
 
@@ -51,13 +50,12 @@ export class SearchComponent implements OnInit {
     this.summonerService
       .getLeagueBySummonerId(this.summoner?.id as string)
       .then((response) => {
-        if (response.error === "") {
+        if (!response.errorMessage) {
           this.league = response.data;
           this.dataLoaded = Promise.resolve(true);
         } else {
-          this.error = response.error;
+          this.errorMessage = response.errorMessage.errorMessage;
         }
       })
-      .catch((error) => (this.error = error));
   }
 }

@@ -12,11 +12,11 @@
   </form>
 </div>
 
-
-<ng-container *ngIf="dataLoaded | async; else errorMessage">
+<ng-container *ngIf="dataLoaded | async; else errorMessageTemplate">
   <app-player-detail [summoner]="summoner!" [league]="league!"></app-player-detail>
 </ng-container>
 
-<ng-template #errorMessage>
-  <p>{{error}}</p>
+<ng-template #errorMessageTemplate>
+  <p>{{errorMessage}}</p>
 </ng-template>
+
