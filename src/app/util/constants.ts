@@ -3,7 +3,8 @@ export class Constants {
   static readonly BACKEND_SUMMONER_URL = "/summoner";
 
   static readonly CDN_BASE_URL = "http://ddragon.leagueoflegends.com/cdn";
-  static readonly CDN_VERSION = "/11.19.1";
+  static readonly CDN_CHAMP_URL = "/data/en_US/champion.json"
+  static readonly CDN_VERSION = "/11.21.1";
   static readonly CDN_PROFILE_ICON_URL = "/img/profileicon";
 
   static readonly ICON_DEFAULT_URL =
