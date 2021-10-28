@@ -25,9 +25,7 @@
 
 <ng-container *ngIf="dataLoaded | async; else errorMessageTemplate">
   <app-player-detail
-    [summoner]="summoner!"
-    [league]="league!"
-    [matches]="matches!"
+    [summonerData]="summonerData!"
   ></app-player-detail>
 </ng-container>
 
