@@ -5,5 +5,4 @@ export class InfoDTO {
   defense: number;
   magic: number;
   difficulty: number;
-  data: Map<string, ChampionDTO>;
 }
