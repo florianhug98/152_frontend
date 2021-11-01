@@ -16,11 +16,10 @@ export class PlayerInfoComponent implements OnInit {
   getProfileIconUrl(): string {
     return (
       Constants.CDN_BASE_URL +
-      Constants.CDN_VERSION +
       Constants.CDN_PROFILE_ICON_URL +
       "/" +
       this.summoner.profileIconId +
-      ".png"
+      ".jpg"
     );
   }
 }

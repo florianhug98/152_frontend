@@ -1,17 +1,7 @@
-import { InfoDTO } from "./infoDTO";
-import { ImageDTO } from "./imageDTO";
-import { StatsDTO } from "./statsDTO";
-
-export class ChampionDTO {
-  version: string;
-  id: string;
-  key: string;
+export interface ChampionDTO {
+  id: number;
   name: string;
-  title: string;
-  blurb: string;
-  info: InfoDTO;
-  image: ImageDTO;
-  tags: string[];
-  partype: string;
-  stats: StatsDTO
+  alias: string;
+  squarePortraitPath: string;
+  roles: string[];
 }

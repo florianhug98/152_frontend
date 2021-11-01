@@ -9,8 +9,8 @@ import { Constants } from "../../../util/constants";
 })
 export class RankInfoComponent implements OnInit {
   @Input() leagueEntries: LeagueEntryDTO[];
-  solo = Constants.SOLO_QUEUE;
-  flex = Constants.FLEX_QUEUE;
+  solo = Constants.SOLO_QUEUE_NAME;
+  flex = Constants.FLEX_QUEUE_NAME;
   constructor() {}
 
   ngOnInit(): void {}
@@ -46,6 +46,6 @@ export class RankInfoComponent implements OnInit {
       )[0];
       return "assets/" + leagueEntry.tier + ".png";
     }
-    return Constants.ICON_DEFAULT_URL;
+    return Constants.RANK_DEFAULT_ICON_URL;
   }
 }
