@@ -46,6 +46,6 @@ export class RankInfoComponent implements OnInit {
       )[0];
       return "assets/" + leagueEntry.tier + ".png";
     }
-    return Constants.RANK_DEFAULT_ICON_URL;
+    return Constants.OPGG_RANK_DEFAULT_ICON_URL;
   }
 }

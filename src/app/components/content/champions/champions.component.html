@@ -13,7 +13,7 @@
       <div class="champions">
         <ng-container *ngFor="let champ of workingData">
           <figure class="icon">
-            <a routerLink="/champions/detail/{{champ.id}}">
+            <a routerLink="/champions/detail/{{champ.name}}">
               <img src="{{getChampionIconUrl(champ.id)}}" alt="{{champ.name}} icon">
             </a>
             <figcaption>{{champ.name}}</figcaption>

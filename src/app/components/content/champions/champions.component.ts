@@ -1,10 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { ChampionService } from "../../../service/champion.service";
-import { ChampionDTO } from "../../../dto/champion/championDTO";
+import { BaseChampionDTO } from "../../../dto/champion/baseChampionDTO";
 import { Constants } from "../../../util/constants";
-import { DataSource } from "@angular/cdk/collections";
 import { FormControl } from "@angular/forms";
-import { waitForAsync } from "@angular/core/testing";
 
 @Component({
   selector: "app-champions",
@@ -12,8 +10,8 @@ import { waitForAsync } from "@angular/core/testing";
   styleUrls: ["./champions.component.scss"]
 })
 export class ChampionsComponent implements OnInit {
-  private originalData: ChampionDTO[];
-  workingData: ChampionDTO[] = [];
+  private originalData: BaseChampionDTO[];
+  workingData: BaseChampionDTO[] = [];
   dataLoaded: Promise<boolean>;
   championName = new FormControl('');
   amountOfChampions: number;
