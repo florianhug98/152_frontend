@@ -1,0 +1,17 @@
+@import "src/styles";
+
+.champions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  .icon {
+    margin-left: 0;
+    img {
+      width: $icon-size * 1.4;
+      height: $icon-size * 1.4;
+    }
+    figcaption {
+      text-align: left;
+    }
+  }
+}

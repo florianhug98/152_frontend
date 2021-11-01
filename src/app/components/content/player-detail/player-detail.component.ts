@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from "@angular/core";
 import { SummonerDTO } from "../../../dto/summonerDTO";
 import { LeagueEntryDTO } from "../../../dto/leagueEntryDTO";
 import { MatchDTO } from "../../../dto/matchDTO";
+import { SummonerDataDTO } from "../../../dto/summonerDataDTO";
 
 @Component({
   selector: "app-player-detail",
@@ -9,9 +10,7 @@ import { MatchDTO } from "../../../dto/matchDTO";
   styleUrls: ["./player-detail.component.scss"],
 })
 export class PlayerDetailComponent implements OnInit {
-  @Input() summoner: SummonerDTO;
-  @Input() league: LeagueEntryDTO[];
-  @Input() matches: MatchDTO[];
+  @Input() summonerData: SummonerDataDTO;
 
   constructor() {}
 

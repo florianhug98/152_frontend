@@ -1,21 +1,16 @@
 export class Constants {
   static readonly BACKEND_BASE_URL = "http://localhost:9900/stats";
   static readonly BACKEND_SUMMONER_URL = "/summoner";
-  static readonly BACKEND_LEAGUE_URL = "/league";
-  static readonly BACKEND_MATCH_URL = "/games/matches";
 
-  static readonly CDN_BASE_URL = "http://ddragon.leagueoflegends.com/cdn";
-  static readonly CDN_VERSION = "/11.19.1";
-  static readonly CDN_PROFILE_ICON_URL = "/img/profileicon";
+  static readonly CDN_BASE_URL = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1";
+  static readonly CDN_PROFILE_ICON_URL = "/profile-icons";
+  static readonly CDN_CHAMP_ICON_URL = "/champion-icons";
+  static readonly CDN_ALL_CHAMP_URL = "/champion-summary.json";
+  static readonly CDN_CHAMP_URL = "/champions";
 
-  static readonly ICON_DEFAULT_URL =
+  static readonly RANK_DEFAULT_ICON_URL =
     "https://opgg-static.akamaized.net/images/medals/default.png";
 
-  static readonly SOLO_QUEUE = "RANKED_SOLO_5x5";
-  static readonly FLEX_QUEUE = "RANKED_FLEX_5x5";
-
-  static readonly HTTP_OK = 200;
-  static readonly HTTP_NOT_FOUND = 404;
-  static readonly HTTP_SERVER_ERROR = 500;
-  static readonly HTTP_TOO_MANY_REQUESTS = 429;
+  static readonly SOLO_QUEUE_NAME = "RANKED_SOLO_5x5";
+  static readonly FLEX_QUEUE_NAME = "RANKED_FLEX_5x5";
 }
