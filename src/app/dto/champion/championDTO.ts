@@ -1,24 +1,25 @@
-import { TacticalInfoDTO } from "./championDetail/tacticalInfoDTO";
-import { PlayStyleInfoDTO } from "./championDetail/playStyleInfoDTO";
+import { ChampionInfoDTO } from "./championDetail/championInfoDTO";
+import { ImageDTO } from "./championDetail/imageDTO";
+import { StatsDTO } from "./championDetail/statsDTO";
 import { SkinDTO } from "./championDetail/skinDTO";
-import { PassiveDTO } from "./championDetail/passiveDTO";
 import { SpellDTO } from "./championDetail/spellDTO";
+import { PassiveDTO } from "./championDetail/passiveDTO";
 
 export interface ChampionDTO{
   id: number;
+  key: string;
   name: string;
-  alias: string;
   title: string;
-  shortBio: string;
-  tacticalInfo: TacticalInfoDTO;
-  playstyleInfo: PlayStyleInfoDTO;
-  squarePortraitPath: string;
-  stingerSfxPath: string;
-  chooseVoPath: string;
-  banVoPath: string;
-  roles: string[];
-  reccomendedItemDefaults: string[];
+  image: ImageDTO;
   skins: SkinDTO[];
-  passive: PassiveDTO;
+  lore: string;
+  blurb: string;
+  allyTips: string[];
+  enemyTips: string[];
+  tags: string[];
+  partype: string;
+  info: ChampionInfoDTO;
+  stats: StatsDTO;
   spells: SpellDTO[];
+  passive: PassiveDTO;
 }

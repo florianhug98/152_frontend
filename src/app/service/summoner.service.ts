@@ -14,12 +14,12 @@ import { SummonerDataDTO } from "../dto/summonerDataDTO";
 export class SummonerService {
   constructor(private http: HttpClient) {}
 
-  getSummonerByName(summonerName: String): Promise<ResponseDTO> {
+  getSummonerByName(summonerName: String): Promise<ResponseDTO<SummonerDataDTO>> {
     const params: HttpParamsOptions = {
       fromString: "summonerName=" + summonerName,
     };
     return this.http
-      .get<ResponseDTO>(
+      .get<ResponseDTO<SummonerDataDTO>>(
         Constants.BACKEND_BASE_URL + Constants.BACKEND_SUMMONER_URL,
         {
           params: new HttpParams(params),

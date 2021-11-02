@@ -23,19 +23,41 @@ export class ChampionDetailComponent implements OnInit {
     this.championName = id != null ? id : "";
 
     this.championService.getChampionDetail(this.championName)
-      .then(champ => {
-        this.champion = champ;
-        this.dataLoaded = Promise.resolve(true);
-        console.log(this.champion);
+      .then(response => {
+        if (response.data){
+          this.champion = response.data.champion;
+          this.dataLoaded = Promise.resolve(true);
+        }
       });
   }
 
   getChampionIconUrl(): string {
-    return Constants.CDN_BASE_URL + Constants.CDN_CHAMP_ICON_URL + "/" + this.championName + ".png";
+    return Constants.CDN_BASE_URL + Constants.CDN_CHAMP_ICON_URL + "/" + this.champion.key + ".png";
   }
 
   getChampionTitle(): string {
     let title = this.champion.title;
     return title.slice(0, 1).toUpperCase() + title.substring(1);
+  }
+
+  getPassiveIconUrl(): string {
+    return Constants.DDRAGON_BASE_URL + Constants.DDRAGON_VERSION +
+      Constants.DDRAGON_PASSIVE_ICON_URL + "/" + this.champion.passive.image.full;
+  }
+
+  getSpellIconURL(index: number): string {
+    return Constants.DDRAGON_BASE_URL + Constants.DDRAGON_VERSION +
+      Constants.DDRAGON_SPELL_ICON_URL + "/" + this.champion.spells[index].image.full;
+  }
+
+  getSpellKey(index: number): string {
+    switch (index) {
+      case 0: return "Q";
+      case 1: return "W";
+      case 2: return "E";
+      case 3: return "R";
+      default: return "";
+    }
+
   }
 }

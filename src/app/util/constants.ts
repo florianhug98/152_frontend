@@ -8,6 +8,11 @@ export class Constants {
   static readonly CDN_CHAMP_ICON_URL = "/champion-icons";
   static readonly CDN_ALL_CHAMP_URL = "/champion-summary.json";
 
+  static readonly DDRAGON_BASE_URL = "http://ddragon.leagueoflegends.com/cdn";
+  static readonly DDRAGON_VERSION = "/11.21.1";
+  static readonly DDRAGON_PASSIVE_ICON_URL = "/img/passive";
+  static readonly DDRAGON_SPELL_ICON_URL = "/img/spell";
+
   static readonly OPGG_RANK_DEFAULT_ICON_URL = "https://opgg-static.akamaized.net/images/medals/default.png";
 
   static readonly SOLO_QUEUE_NAME = "RANKED_SOLO_5x5";
