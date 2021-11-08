@@ -14,7 +14,8 @@ export class ChampionDetailComponent implements OnInit {
   champion: ChampionDTO;
   dataLoaded: Promise<boolean>;
 
-  private readonly tagRegex = "<[^>]*>";
+  private readonly tagRegex = "/<[^>]*>/g";
+  private readonly curlyBracketRegex = "/{{[^>]*}}/g";
 
   constructor(private route: ActivatedRoute,
               private championService: ChampionService) {
@@ -26,7 +27,7 @@ export class ChampionDetailComponent implements OnInit {
 
     this.championService.getChampionDetail(this.championName)
       .then(response => {
-        if (response.data){
+        if (response.data) {
           this.champion = response.data.champion;
           this.dataLoaded = Promise.resolve(true);
         }
@@ -54,20 +55,40 @@ export class ChampionDetailComponent implements OnInit {
 
   getSpellKey(index: number): string {
     switch (index) {
-      case 0: return "Q";
-      case 1: return "W";
-      case 2: return "E";
-      case 3: return "R";
-      default: return "";
+      case 0:
+        return "Q";
+      case 1:
+        return "W";
+      case 2:
+        return "E";
+      case 3:
+        return "R";
+      default:
+        return "";
     }
   }
 
   getPassiveTooltip(): string {
-    return this.champion.passive.description.replace(this.tagRegex, "?");
+    return this.addTooltipDisclaimer(
+      this.replaceSpecialChars(
+        this.champion.passive.description)
+    );
   }
 
   getSpellTooltip(index: number): string {
-    console.log(this.champion.spells[index].tooltip.replace(this.tagRegex, "?"))
-    return "TEST TEST"
+    return this.addTooltipDisclaimer(
+      this.replaceSpecialChars(
+        this.champion.spells[index].tooltip)
+    );
+  }
+
+  private replaceSpecialChars(string: string): string {
+    return string.replace(/<[^>]*>/g, "")
+      .replace(/{{[^}]*}}/g, "? ");
+  }
+
+  private addTooltipDisclaimer(string: string): string {
+    return string + "\n \n" +
+      "'?' - Werte können nicht von der API bezogen werden.";
   }
 }
