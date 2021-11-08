@@ -3,7 +3,7 @@
 .champions {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   .icon {
     margin-left: 0;
     img {

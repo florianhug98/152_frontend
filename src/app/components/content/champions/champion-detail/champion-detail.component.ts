@@ -14,6 +14,8 @@ export class ChampionDetailComponent implements OnInit {
   champion: ChampionDTO;
   dataLoaded: Promise<boolean>;
 
+  private readonly tagRegex = "<[^>]*>";
+
   constructor(private route: ActivatedRoute,
               private championService: ChampionService) {
   }
@@ -58,6 +60,14 @@ export class ChampionDetailComponent implements OnInit {
       case 3: return "R";
       default: return "";
     }
+  }
 
+  getPassiveTooltip(): string {
+    return this.champion.passive.description.replace(this.tagRegex, "?");
+  }
+
+  getSpellTooltip(index: number): string {
+    console.log(this.champion.spells[index].tooltip.replace(this.tagRegex, "?"))
+    return "TEST TEST"
   }
 }

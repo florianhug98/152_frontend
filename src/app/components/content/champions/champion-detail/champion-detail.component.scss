@@ -1,7 +1,18 @@
-.champ-spells {
+.champ-abilities {
   img {
     display: block;
     margin-bottom: 1em;
+  }
+}
+
+.champ-info {
+  display: flex;
+  gap: 2em;
+  h1 {
+    font-size: 2.5em;
+  }
+  p {
+    font-size: 1.5em;
   }
 }
 
@@ -9,4 +20,10 @@
   display: flex;
   align-items: center;
   gap: 2em;
+}
+
+.champ-info{
+  h1 {
+    margin-bottom: 0.25em;
+  }
 }

@@ -1,23 +1,31 @@
 <ng-container *ngIf="dataLoaded | async">
   <div>
-    <div>
+    <div class="champ-info">
       <img src="{{getChampionIconUrl()}}" alt="{{champion.name}} icon">
-      <h1>{{champion.name}}</h1>
-      <p>{{getChampionTitle()}}</p>
+      <div>
+        <h1>{{champion.name}}</h1>
+        <p>{{getChampionTitle()}}</p>
+      </div>
     </div>
-    <hr/>
-    <div class="champ-spells">
+    <hr />
+    <div class="champ-lore" fxHide.xs>
+      <p>{{champion.lore}}</p>
+      <hr />
+    </div>
+    <div class="champ-abilities">
       <div class="icon">
-        <img src="{{getPassiveIconUrl()}}" alt="{{champion.name}} passive icon">
+        <img src="{{getPassiveIconUrl()}}" alt="{{champion.name}} passive icon" [matTooltip]=getPassiveTooltip()
+             matTooltipPosition="above" matTooltipClass="spell-tooltip">
         <span>P - {{champion.passive.name}}</span>
       </div>
       <ng-container *ngFor="let spell of champion.spells; let i = index">
         <div class="icon">
-        <img src="{{getSpellIconURL(i)}}" alt="{{champion.name}}{{getSpellKey(i)}} icon">
+          <img src="{{getSpellIconURL(i)}}" alt="{{champion.name}} {{getSpellKey(i)}} icon"
+               [matTooltip]=getSpellTooltip(i) matTooltipPosition="above" [matTooltipClass]="'spell-tooltip'">
           <span>{{getSpellKey(i)}} - {{spell.name}}</span>
         </div>
       </ng-container>
-      <hr/>
+      <hr />
     </div>
   </div>
 </ng-container>

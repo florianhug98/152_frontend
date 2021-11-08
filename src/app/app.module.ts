@@ -27,6 +27,8 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { MatMenuModule } from "@angular/material/menu";
 import { PlayerStatsComponent } from "./components/content/player-stats/player-stats.component";
 import { ChampionDetailComponent } from './components/content/champions/champion-detail/champion-detail.component';
+import { MatExpansionModule } from "@angular/material/expansion";
+import { MatTooltipModule } from "@angular/material/tooltip";
 
 @NgModule({
   declarations: [
@@ -59,7 +61,9 @@ import { ChampionDetailComponent } from './components/content/champions/champion
     LayoutModule,
     FlexLayoutModule,
     MatMenuModule,
-    FormsModule
+    FormsModule,
+    MatExpansionModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent],
