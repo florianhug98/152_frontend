@@ -14,9 +14,6 @@ export class ChampionDetailComponent implements OnInit {
   champion: ChampionDTO;
   dataLoaded: Promise<boolean>;
 
-  private readonly tagRegex = "/<[^>]*>/g";
-  private readonly curlyBracketRegex = "/{{[^>]*}}/g";
-
   constructor(private route: ActivatedRoute,
               private championService: ChampionService) {
   }
@@ -83,8 +80,8 @@ export class ChampionDetailComponent implements OnInit {
   }
 
   private replaceSpecialChars(string: string): string {
-    return string.replace(/<[^>]*>/g, "")
-      .replace(/{{[^}]*}}/g, "? ");
+    return string.replace(/<(.*?)>/g, "")
+      .replace(/{{(.*?)}}/g, "? ");
   }
 
   private addTooltipDisclaimer(string: string): string {
