@@ -15,11 +15,12 @@ export class PlayerInfoComponent implements OnInit {
 
   getProfileIconUrl(): string {
     return (
-      Constants.CDN_BASE_URL +
-      Constants.CDN_PROFILE_ICON_URL +
+      Constants.DDRAGON_BASE_URL +
+      Constants.DDRAGON_VERSION +
+      Constants.DDRAGON_PROFILEICON_URL +
       "/" +
       this.summoner.profileIconId +
-      ".jpg"
+      ".png"
     );
   }
 }

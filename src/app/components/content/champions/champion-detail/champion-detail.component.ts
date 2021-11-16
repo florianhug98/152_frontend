@@ -58,10 +58,8 @@ export class ChampionDetailComponent implements OnInit {
         return "W";
       case 2:
         return "E";
-      case 3:
-        return "R";
       default:
-        return "";
+        return "R";
     }
   }
 
@@ -79,6 +77,11 @@ export class ChampionDetailComponent implements OnInit {
     );
   }
 
+  getSkinImageUrl(skinNumber: number): string {
+    return Constants.DDRAGON_BASE_URL + Constants.DDRAGON_CHAMP_LOADING_URL
+      + "/" + this.champion.name + "_" + skinNumber + ".jpg";
+  }
+
   private replaceSpecialChars(string: string): string {
     return string.replace(/<(.*?)>/g, "")
       .replace(/{{(.*?)}}/g, "? ");
@@ -86,6 +89,6 @@ export class ChampionDetailComponent implements OnInit {
 
   private addTooltipDisclaimer(string: string): string {
     return string + "\n \n" +
-      "'?' - Werte können nicht von der API bezogen werden.";
+      "'?' - values can't be optained from the Riot API.";
   }
 }
