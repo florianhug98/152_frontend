@@ -30,11 +30,11 @@
       <hr />
     </div>
     <div class="champ-skins">
-        <ng-container *ngFor="let skin of champion.skins">
-          <div class="champ-skin">
-            <img src="{{getSkinImageUrl(skin.num)}}" alt="{{champion.name}} Skin {{skin.num}}"/>
-          </div>
-        </ng-container>
+      <ng-container *ngFor="let skin of champion.skins">
+        <div class="champ-skin">
+          <img src="{{getSkinImageUrl(skin.num)}}" alt="{{championName}} {{skin.num}} skin"/>
+        </div>
+      </ng-container>
     </div>
   </div>
 </ng-container>

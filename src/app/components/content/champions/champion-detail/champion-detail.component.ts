@@ -13,6 +13,7 @@ export class ChampionDetailComponent implements OnInit {
   championName: string;
   champion: ChampionDTO;
   dataLoaded: Promise<boolean>;
+  skinUrls: string[] = [];
 
   constructor(private route: ActivatedRoute,
               private championService: ChampionService) {
@@ -26,6 +27,8 @@ export class ChampionDetailComponent implements OnInit {
       .then(response => {
         if (response.data) {
           this.champion = response.data.champion;
+
+          this.champion.skins.forEach(s => this.skinUrls.push(this.getSkinImageUrl(s.num)))
           this.dataLoaded = Promise.resolve(true);
         }
       });
