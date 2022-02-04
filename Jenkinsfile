@@ -10,6 +10,12 @@ pipeline {
         sh 'node -v'
       }
     }
+    
+    stage('install') {
+      steps {
+        sh 'npm ci'
+      }
+    }
 
     stage('prettier') {
         steps {
