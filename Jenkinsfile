@@ -1,6 +1,6 @@
 pipeline {
   agent {
-    docker { image 'trion/ng-cli' }
+    docker { image 'trion/ng-cli-e2e' }
   }
   
   stages {
