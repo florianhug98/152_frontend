@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "test-no-watch": "ng test --watch=false --browsers=ChromeHeadless",
+    "test-no-watch": "ng test --watch=false",
     "prettier": "npx prettier --check .",
     "prettier-fix": "npx prettier --write ."
   },
