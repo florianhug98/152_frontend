@@ -1,29 +1,45 @@
 <ng-container *ngIf="dataLoaded | async">
   <div>
     <div class="champ-info">
-      <img src="{{getChampionIconUrl()}}" alt="{{champion.name}} icon">
+      <img src="{{ getChampionIconUrl() }}" alt="{{ champion.name }} icon" />
       <div>
-        <h1>{{champion.name}}</h1>
-        <p>{{getChampionTitle()}}</p>
+        <h1>{{ champion.name }}</h1>
+        <p>{{ getChampionTitle() }}</p>
       </div>
     </div>
     <hr />
     <div class="champ-lore" fxHide.xs>
-      <p>{{champion.lore}}</p>
+      <p>{{ champion.lore }}</p>
       <hr />
     </div>
     <div class="champ-abilities">
       <div>
-        <div class="icon" [matTooltip]=getPassiveTooltip() matTooltipPosition="above" matTooltipClass="spell-tooltip">
-          <img src="{{getPassiveIconUrl()}}" alt="{{champion.name}} passive icon">
-          <span>P - {{champion.passive.name}}</span>
+        <div
+          class="icon"
+          [matTooltip]="getPassiveTooltip()"
+          matTooltipPosition="above"
+          matTooltipClass="spell-tooltip"
+        >
+          <img
+            src="{{ getPassiveIconUrl() }}"
+            alt="{{ champion.name }} passive icon"
+          />
+          <span>P - {{ champion.passive.name }}</span>
         </div>
       </div>
       <ng-container *ngFor="let spell of champion.spells; let i = index">
         <div>
-          <div class="icon" [matTooltip]=getSpellTooltip(i) [matTooltipClass]="'spell-tooltip'" matTooltipPosition="above">
-            <img src="{{getSpellIconURL(i)}}" alt="{{champion.name}} {{getSpellKey(i)}} icon">
-            <span>{{getSpellKey(i)}} - {{spell.name}}</span>
+          <div
+            class="icon"
+            [matTooltip]="getSpellTooltip(i)"
+            [matTooltipClass]="'spell-tooltip'"
+            matTooltipPosition="above"
+          >
+            <img
+              src="{{ getSpellIconURL(i) }}"
+              alt="{{ champion.name }} {{ getSpellKey(i) }} icon"
+            />
+            <span>{{ getSpellKey(i) }} - {{ spell.name }}</span>
           </div>
         </div>
       </ng-container>
@@ -32,7 +48,10 @@
     <div class="champ-skins">
       <ng-container *ngFor="let skin of champion.skins">
         <div class="champ-skin">
-          <img src="{{getSkinImageUrl(skin.num)}}" alt="{{championName}} {{skin.num}} skin"/>
+          <img
+            src="{{ getSkinImageUrl(skin.num) }}"
+            alt="{{ championName }} {{ skin.num }} skin"
+          />
         </div>
       </ng-container>
     </div>

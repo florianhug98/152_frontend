@@ -5,7 +5,7 @@ import { SkinDTO } from "./championDetail/skinDTO";
 import { SpellDTO } from "./championDetail/spellDTO";
 import { PassiveDTO } from "./championDetail/passiveDTO";
 
-export interface ChampionDTO{
+export interface ChampionDTO {
   id: number;
   key: string;
   name: string;

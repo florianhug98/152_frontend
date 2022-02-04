@@ -1,5 +1,9 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams, HttpParamsOptions } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import {
+  HttpClient,
+  HttpParams,
+  HttpParamsOptions,
+} from "@angular/common/http";
 import { Constants } from "../util/constants";
 import { ChampionDTO } from "../dto/champion/championDTO";
 import { BaseChampionDTO } from "../dto/champion/baseChampionDTO";
@@ -8,10 +12,10 @@ import { SummonerDataDTO } from "../dto/summonerDataDTO";
 import { ChampionWrapperDTO } from "../dto/champion/championWrapperDTO";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class ChampionService {
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getChampionData(): Promise<BaseChampionDTO[]> {
     return this.http

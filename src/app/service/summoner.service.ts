@@ -14,7 +14,9 @@ import { SummonerDataDTO } from "../dto/summonerDataDTO";
 export class SummonerService {
   constructor(private http: HttpClient) {}
 
-  getSummonerByName(summonerName: String): Promise<ResponseDTO<SummonerDataDTO>> {
+  getSummonerByName(
+    summonerName: String
+  ): Promise<ResponseDTO<SummonerDataDTO>> {
     const params: HttpParamsOptions = {
       fromString: "summonerName=" + summonerName,
     };

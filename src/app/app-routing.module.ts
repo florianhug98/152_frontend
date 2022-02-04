@@ -10,8 +10,8 @@ const routes: Routes = [
   { path: "search", component: SearchComponent },
   { path: "items", component: ItemComponent },
   { path: "champions", component: ChampionsComponent },
-  { path: "champions/detail/:name", component: ChampionDetailComponent},
-  { path: "champions/detail", redirectTo: "champions"},
+  { path: "champions/detail/:name", component: ChampionDetailComponent },
+  { path: "champions/detail", redirectTo: "champions" },
   { path: "", redirectTo: "search", pathMatch: "full" },
   { path: "**", component: NotFoundComponent },
 ];

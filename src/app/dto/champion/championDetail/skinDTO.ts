@@ -1,4 +1,4 @@
-export interface SkinDTO{
+export interface SkinDTO {
   id: string;
   num: number;
   name: string;

@@ -6,8 +6,21 @@ pipeline {
   stages {
     stage('init') {
       steps {
+        sh 'npm -v'
         sh 'node -v'
       }
+    }
+
+    stage('prettier') {
+        steps {
+            sh 'npm run prettier'
+        }
+    }
+
+    stage('test') {
+        steps {
+            sh 'npm run test-no-watch'
+        }
     }
   }
 }
